@@ -15,7 +15,7 @@ public class E05For {
 		for(int i=1 ; i<=5 ; i++) {
 			System.out.println("i=" + i);
 		}
-		
+//		
 //		[시나리오] 1~100까지의 합을 구하는 프로그램 -for문
 		int sum = 0;
 		for(int j=1 ; j<=100 ; j++) {
@@ -34,11 +34,11 @@ public class E05For {
 		System.out.println("1~10사이 2의배수의 합 (방법1): " + total );
 		
 //		방법 2. if문 없이 초기값을 0부터 시작해 2씩 증가시켜 처음부터 i로 2의배수만 들어옴
-		total = 0;
-		for(int i=0 ; i<=10 ; i+=2) {
-			total += i;
-		}
-		System.out.println("1~10사이의 2의 배수의 합 (방법2): " + total);
+//		total = 0;
+//		for(int i=0 ; i<=10 ; i+=2) {
+//			total += i;
+//		}
+//		System.out.println("1~10사이의 2의 배수의 합 (방법2): " + total);
 		
 //		for문으로 무한루프를 만들 때는 (;;)와 같이 표현
 //		while(true)와 동일한 표현
@@ -51,24 +51,24 @@ public class E05For {
 //		}
 		
 //		for문의 끝에 ;을 사용ㅎ면 반복할 문장이 없는것으로 간주됨 (잘못된 문장)
-		for(int j=0 ; j<=5 ; j++);
-		{
-			System.out.println("어랏... 나는 누구? 여긴 어디?");
-		}
+//		for(int j=0 ; j<=5 ; j++);
+//		{
+//			System.out.println("어랏... 나는 누구? 여긴 어디?");
+//		}
 		
 //		for문의 초기식에서 선언된 변수 j는 for문이 종료되는 순간 메모리에서 소멸 (=지역변수)
 //		for문의 블럭을 벗어나 j가 소멸되어 존재하지않음
 //		System.out.println("위 for문에서 선언한 변수 j=" +j);
-		System.out.println("위 main함수 지역에서 선언한 변수 total=" + total);
+//		System.out.println("위 main함수 지역에서 선언한 변수 total=" + total);
 		
 		
 //		for문의 초기값을 외부(여기선 main함수)에서 선언하면 해당변수는 for문 안쪽(좁은지역)에서 사용할 수 있음
 //		아래 선언한 i는 main메서드의 지역변수	
-		int i = 0;
-		for( ; i<=5 ; i++) {
-			System.out.println("for문 안에서의 i값=" + i);
-		}
-		System.out.println("for문 밖에서의 i값=" +i);
+//		int i = 0;
+//		for( ; i<=5 ; i++) {
+//			System.out.println("for문 안에서의 i값=" + i);
+//		}
+//		System.out.println("for문 밖에서의 i값=" +i);
 		
 		/*
 		자바에서 중괄호 -> 지역
@@ -86,17 +86,17 @@ public class E05For {
 //		}
 		
 //		단에 해당하는 for문
-		for(int dan=2 ; dan<=9 ; dan++) {
-//			곱할 수에 해당하는 for문
-			for(int su=1 ; su<=9 ; su++) {
-//				System.out.print(dan + "x" + su + "=" + (dan*su));
-				System.out.printf("%d*%d=%2d", dan, su, dan*su);
-//				각 항목을 구분하기 위해 띄어쓰기
-				System.out.print(" ");
-			}
-//			하나의 단을 모두 출력한 후 줄바꿈 처리
-			System.out.println();
-		}
+//		for(int dan=2 ; dan<=9 ; dan++) {
+////			곱할 수에 해당하는 for문
+//			for(int su=1 ; su<=9 ; su++) {
+////				System.out.print(dan + "x" + su + "=" + (dan*su));
+//				System.out.printf("%d*%d=%2d", dan, su, dan*su);
+////				각 항목을 구분하기 위해 띄어쓰기
+//				System.out.print(" ");
+//			}
+////			하나의 단을 모두 출력한 후 줄바꿈 처리
+//			System.out.println();
+//		}
 		
 	}
 }
