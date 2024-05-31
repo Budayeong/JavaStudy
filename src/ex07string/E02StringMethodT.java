@@ -65,7 +65,7 @@ public class E02StringMethodT {
 		파일명 : my.file.images.jpg
 		*/
 		System.out.println("=== 시나리오4 ===");
-		String fileName = "my.file.images.jpg";
+		String fileName = "my.file.images.jpg"; 
 		
 //		파일명 마지막 .의 위치 검색
 		int dotPoIdx = fileName.lastIndexOf(".");
