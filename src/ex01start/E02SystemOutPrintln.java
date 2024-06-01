@@ -8,9 +8,11 @@ printf() : 출력내용을 서식에 맞춰 출력. 줄바꿈 기능이 없으�
 		단, 줄바꿈을 위한 %n은 printf()에서만 사용할 수 있다.
 */
 
+
 public class E02SystemOutPrintln {
 	public static void main(String[] args) {
 		
+
 //		정수형 변수를 선언한 후 100으로 초기화
 		int num1 = 100;
 		
@@ -41,5 +43,7 @@ public class E02SystemOutPrintln {
 		 문자열 + 정수 + 문자열 -> 연결
 		 */
 		System.out.println("num1은"+num1+" 입니다");
+		
+		
 	}
 }

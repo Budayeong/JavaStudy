@@ -2,40 +2,53 @@ package ex07string;
 
 public class Test {
 	public static void main(String[] args) {
-		int i = 1;
-		int sum = 0;
-	
-		while(i<=100) {
-			if(i%3==0) {
-			sum+=i;
-			System.out.println("i="+i);
-			}
-			i++;
-		}
-		System.out.println(sum);
 		
-//		i=1;
-//		sum=0;
-//		while(i<=100) {
-//			if(i%7==0) {
-//			sum+=i;
-//			}
-//			i++;
-//		}
-//		System.out.println(sum);
+		System.out.println("    *");
+		System.out.println("   * * *");
+		System.out.println("  * * * * *");
+		System.out.println(" * * * * * * *");
+		System.out.println("* * * * * * * * *");
 		
-//		i=1;
-//		sum=0;
-//		while(i<=100) {
-//			if(i%21==0) {
-//			sum+=i;
-//			System.out.println("i="+i);
-//			}
-//			i++;
-//		}
-//		System.out.println(sum);
+		
+		
+		
+		System.out.println("======= 문제4 정렬 ======= ");
+//		* 을 출력할 변수
+		String sum = "*";
+//		공백의 개수
+		int blank = 8;
+		
+		for(int i=1 ; i<=5 ; i++) {
 			
-		System.out.println(7+14+28+35+49+56+70+77+91+98);
+			for (int j=blank ; j>=1 ; j--) {
+				System.out.print(" ");
+			}
+			System.out.println(sum);
+			
+			blank = blank -2;
+			sum += " * *";
+		}
+		
+		System.out.println();
+		
+		System.out.println("======= 문제4 정렬 + 대응 ======= ");
+		sum ="*";
+		//총 반복횟수(= 출력될 줄의 수)
+		int end=5;
+		for(int i=1 ; i<=end; i++) {
+			//공백 개수 = (마지막 반복 때 (마지막 줄) sum의 길이 - 현재 sum의 길이) / 2 
+			blank = ((1+4*(end-1)) - sum.length())/2;
+			for (int j=blank ; j>=1 ; j--) {
+				System.out.print(" ");
+			}
+			System.out.println(sum);
+			
+			blank = blank -2;
+			sum += " * *";
+		}
+		
+		
+		
 		
 	}
 }	

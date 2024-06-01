@@ -16,14 +16,12 @@ public class Qu3Or7Sum {
 		while(i<=100) {
 			// 3의 배수이거나 7의 배수인 경우 실행
 			if(i%3==0 || i%7==0) {
-				// 3의 배수이거나 7의 배수이지만 3과 7의 공배수가 아닌 경우 sum 에 값 누적
-				if(!(i%3==0 && i%7==0)){
+				// 3의 배수이거나 7의 배수이지만 21의 배수(3과 7의 공배수)가 아닌 경우 sum 에 값 누적
+				if(!(i%21==0))
 					sum += i;
-				}
-				// 3과 7의 공배수인경우 값 누적 안함
-				else {				
+				// 21의 배수인 경우 값 누적 안함
+				else 		
 					System.out.println(i+"는 3과 7의 공배수입니다. 계산에서 제외됩니다");
-				}
 			}
 			i++;
 		}
@@ -39,12 +37,10 @@ public class Qu3Or7Sum {
 		System.out.println("======== do-while문 ===========");
 		do {
 			if(i%3==0 || i%7==0) {
-				if(!(i%3==0 && i%7==0)){
+				if(!(i%21==0))
 					sum += i;
-				}
-				else {				
+				else 		
 					System.out.println(i+"는 3과 7의 공배수입니다. 계산에서 제외됩니다");
-				}
 			}
 			i++;
 		} while(i<=100);
@@ -59,12 +55,10 @@ public class Qu3Or7Sum {
 		System.out.println("======== for문 ===========");
 		for(i=1 ; i<=100 ; i++) {
 			if(i%3==0 || i%7==0) {
-				if(!(i%3==0 && i%7==0)){
+				if(!(i%21==0))
 					sum += i;
-				}
-				else {				
+				else 				
 					System.out.println(i+"는 3과 7의 공배수입니다. 계산에서 제외됩니다");
-				}
 			}
 		}
 		 System.out.println("[3과 7의 배수의 합] (공배수제외): " + sum);
