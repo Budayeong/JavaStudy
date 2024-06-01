@@ -19,10 +19,10 @@ public class QuPyramid04 {
 		
 //		문자열 *을 누적할 변수
 		String sum = "";
-//		가장많은 *의 개수
+//		출력할 *의 최대 개수
 		int end = 5;
 		
-//		end만큼 반복하며 *을 누적한다
+//		end만큼 반복하며 *을 한개씩 누적해 출력
 		for(int i=1 ; i<=end ; i++) {
 			sum+="* ";
 			System.out.println(sum);
