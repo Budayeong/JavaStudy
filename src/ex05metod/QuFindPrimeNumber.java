@@ -17,10 +17,27 @@ package ex05metod;
 public class QuFindPrimeNumber {
 	public static void main(String[] args) {
 		
+		for(int i=1 ; i<=100 ; i++) {
+			if(isPrimeNumber(i))
+				System.out.println(i);
+		}
+	
 	}
 	
 	public static boolean isPrimeNumber(int num) {
+		
+//		0,1은 소수제외
+		if(num<2)
+			return false;
+		
+//		소수의 경우 자기자신보다 작은 수에 나누어지지 않음
+		for(int i=2 ; i<num ; i++) {
+			if(num%i==0)
+				return false;
+		}
 		return true;
+		
+		
 	}
 	
 }
