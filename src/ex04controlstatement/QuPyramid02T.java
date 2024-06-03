@@ -10,18 +10,19 @@ package ex04controlstatement;
 *
 
 */
-public class QuPyramid02 {
+public class QuPyramid02T {
 	public static void main(String[] args) {
 	
-//		while문 반복 횟수
-		int i = 5;
-		String sum = "* * * * * ";
-		
+		int x = 5;
 		do {
-			System.out.println(sum.substring(0, i*2));
-			i--;
-		} while (i>0);
-		
-		
+			int y = 1;
+			do {
+				System.out.print("* ");
+				y++;
+			}while(y<=x);
+			x--;
+			System.out.println();
+		}while(x>=1);
 	}
+	
 }
