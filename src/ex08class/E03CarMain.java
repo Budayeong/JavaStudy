@@ -60,7 +60,6 @@ public class E03CarMain {
 		car2.owner.age = 52;
 		car2.owner.energy = 8;
 		car2.showCarInfo();
-		
 //		car3 객체 - 매개변수가 있는 initialize메서드를 사용해 값을 전달해 초기화
 //		initialize메서드를 통해 쉽게 여러형태의 인스턴스 생성 가능
 		Car car3 = new Car();

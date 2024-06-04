@@ -1,7 +1,7 @@
 package ex08class;
 
 //과일 판매자
-class FruitSelelr {
+class FruitSeller {
 //	판매자의 사과 보유수량, 수익금, 사과가격 정의
 	int numOfApple = 100;
 	int myMoney = 0;
@@ -35,7 +35,7 @@ class FruitBuyer {
 	int numOfApple = 0;
 	
 //	구매자가 판매자에게 사과를 구매하는 동작 표현
-	public void buyApple(FruitSelelr seller, int money) {
+	public void buyApple(FruitSeller seller, int money) {
 //		판매자가 반환하는 사과의 개수를 합산
 		numOfApple += seller.saleApple(money);
 //		지불한 금액을 차감
@@ -54,7 +54,7 @@ public class E06FruitSalesMain1 {
 	public static void main(String[] args) {
 		
 //		판매자, 구매자 인스턴스 생성. 생성자를 생성한적없기때문에 기본 생성자를 통해 만들어짐.
-		FruitSelelr seller = new FruitSelelr();
+		FruitSeller seller = new FruitSeller();
 		FruitBuyer buyer = new FruitBuyer();
 		
 		
