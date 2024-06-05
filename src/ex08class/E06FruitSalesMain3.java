@@ -1,7 +1,7 @@
 package ex08class;
 
 /*
-세번째 예제에서는 생성자 ㄷ입
+세번째 예제에서는 생성자 대입
 */
 class Fruitseller3 {
 	int numOfApple;
