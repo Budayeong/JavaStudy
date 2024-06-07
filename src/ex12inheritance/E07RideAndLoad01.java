@@ -76,5 +76,20 @@ public class E07RideAndLoad01 {
 //		B,C에 정의된 메서드 접근불가
 //		ref1.loadMethod(1);
 //		ref1.loadMethod(1.1);
+		
+		A refNum1 = new B();
+		A refNum2 = new C();
+		B refNum3 = new C();
+		
+		C refAddr1 = new C();
+		B refAddr2 = refAddr1;
+		A refAddr3 = refAddr1;
+		
+		A refId1 = new C();
+//		B refId2 = refId1;
+		A refId3 = refId1;
+		
+//		B refId2 = (B)refId1;
+//		C refId3 = (C)refId1;
 	}
 }
