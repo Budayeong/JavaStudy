@@ -53,7 +53,7 @@ class HighFriend extends Friend {
 		System.out.println("별명:" + nickname);
 	} 
 
-//	오버라이딩2: 고등학교친구의 간략한 정보를 출력. 부모클래스에서 시랳ㅇ부가 없는 상태로 정의되어있음.
+//	오버라이딩2: 고등학교친구의 간략한 정보를 출력. 부모클래스에서 실행부가없는 상태로 정의되어있음.
 //	@Override
 	public void showBasicInfo() {
 		System.out.println("==고딩친구==");
