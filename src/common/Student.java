@@ -14,6 +14,15 @@ public class Student extends Person {
 		return super.toString() + ", 학번:" + stNumber ;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		Student st = (Student)obj;
+		if(this.getName()==st.getName()) {
+			System.out.print("오버라이딩 한 equals() 호출됨: " + st.getName());
+			return true;
+		}
+		return false;
+	}
 	
 	
 	
