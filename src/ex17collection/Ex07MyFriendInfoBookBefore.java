@@ -10,14 +10,14 @@ Friend: 친구를 추상화한 최상위 클래스.
 	- 기본정보 저장, 상속을 목적으로 정의
 	- 데이터를 저장하기 위한 용도의 클래스 VO(Value Object) : 값만 가진 객체
 */
-class Friend {
+class FriendT {
 //	멤버변수: 이름, 전화번호, 주소
 	String name;
 	String phone;
 	String addr;
 	
 //	생성자: 멤버변수 초기화
-	public Friend(String name, String phone, String addr) {
+	public FriendT(String name, String phone, String addr) {
 		this.name = name;
 		this.phone = phone;
 		this.addr = addr;
@@ -37,12 +37,12 @@ class Friend {
 /*
 HighFriend: 고등학교 친구 정보 저장
 */
-class HighFriend extends Friend {
+class HighFriendT extends FriendT {
 //	멤버변수 확장: 별명
 	String nickname;
 	
 //	생성자: 전달받은 값을 부모 생성자를 호출하고 멤버변수 초기화
-	public HighFriend(String name, String phone, String addr, String nickname) {
+	public HighFriendT(String name, String phone, String addr, String nickname) {
 		super(name, phone, addr);
 		this.nickname = nickname;
 	}
@@ -67,11 +67,11 @@ class HighFriend extends Friend {
 /*
 UnivFriend: 대학교 친구 정보를 저장
 */
-class UnivFriend extends Friend {
+class UnivFriendT extends FriendT {
 //	멤버변수 확장: 전공
 	String major;
 	
-	public UnivFriend(String name, String phone, String addr, String major) {
+	public UnivFriendT(String name, String phone, String addr, String major) {
 		super(name, phone, addr);
 		this.major = major;
 	}
@@ -96,7 +96,7 @@ class UnivFriend extends Friend {
 /*
 핸들러 클래스: 기능 담당 클래스.
 */
-class FriendInfoHandler {
+class FriendInfoHandlerT {
 	
 //	private Friend[] myFriends;
 //	private int numOfFriends;
@@ -105,7 +105,7 @@ class FriendInfoHandler {
 //	Friend 클래스의 자식까지 저장하기위해 Friend 타입의 컬렉션으로 선언
 	private ArrayList<Friend> lists;
 	
-	public FriendInfoHandler(int num) {
+	public FriendInfoHandlerT(int num) {
 //		myFriends = new Friend[num];
 //		numOfFriends = 0;
 //		생성자에서 컬렉션 객체 생성
@@ -164,10 +164,26 @@ class FriendInfoHandler {
 		System.out.println("검색할 이름을 입력하세요: ");
 		String searchName= scan.nextLine();
 
-//		일반 for문 사용 검색기능 메서드
-		for(int i=0 ; i<lists.size() ; i++) {
-			if(searchName.compareTo(lists.get(i).name)==0) {
-				lists.get(i).showAllData();
+		
+//		for(int i=0 ; i<numOfFriends ; i++) {
+//			if(searchName.compareTo(myFriends[i].name)==0) {
+//				myFriends[i].showAllData();
+//				System.out.println("**귀하가 요청하는 정보를 찾았습니다**");
+//				isFind = true;
+//			}
+//		}
+//		if(isFind==false)
+//			System.out.println("***찾는 정보가 없습니다***");
+		
+//		인터레이터 인스턴스 생성
+		Iterator<Friend> itr = lists.iterator();
+		while(itr.hasNext()) {
+//			저장된 인스턴스 인출
+			Friend fr = itr.next();
+//			입력한 이름과 동일한 이름이 있다면
+			if(searchName.compareTo(fr.name)==0) {
+//				정보출력
+				fr.showAllData();
 				System.out.println("**귀하가 요청하는 정보를 찾았습니다**");
 				isFind = true;
 			}
@@ -180,30 +196,56 @@ class FriendInfoHandler {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("삭제할 이름을 입력하세요: ");
 		String deleteName = scan.nextLine();
-		boolean deleteEnd = false;
+		int deleteIndex = -1;
 		
-		Iterator<Friend> itr = lists.iterator();
-		while(itr.hasNext()) {
-			Friend fr = itr.next();
-			if(fr.name.equals(deleteName)) {
+//		for(int i=0 ; i<numOfFriends ; i++) {
+//			if(deleteName.compareTo(myFriends[i].name)==0) {
+//				myFriends[i] = null;
+//				deleteIndex = i;
+//				numOfFriends--;
+//				break;
+//			}
+//		}
+//		
+//		if(deleteIndex == -1)
+//			System.out.println("==삭제된 데이터가 없습니다==");
+//		else {
+//			for(int i=deleteIndex ; i<numOfFriends ; i++) {
+//				myFriends[i] = myFriends[i+1];
+//			}
+//			System.out.println("==데이터(" + deleteIndex + "번)가 삭제되었습니다==");
+//		}
+		
+//		확장for문을 통해 반복해 삭제할 이름 검색
+		for(Friend fr : lists) {
+			if(deleteName.compareTo(fr.name)==0) {
 				lists.remove(fr);
-				deleteEnd = true;
+//				삭제가 되었는지 안되었는지 판단하기 위한 변수로 사용
+				deleteIndex = 1;
 				break;
 			}
 		}
 		
-		if(deleteEnd)
-			System.out.println("==데이터가 삭제되었습니다==");
-		else
+		if(deleteIndex == -1)
 			System.out.println("==삭제된 데이터가 없습니다==");
+		else
+			System.out.println("==데이터가 삭제되었습니다==");
+	
 	}
+	
+	
+	
+	
+	
+	
+}
 
-}//핸들러 종료
+
 
 /*
 메인 프로그램
 */
-public class Ex07MyFriendInfoBook {
+public class Ex07MyFriendInfoBookBefore {
 //	메뉴출력 메서드, 객체없이 생성하기 위해 static 선언
 	public static void menuShow() {
 		System.out.println("########### 메뉴를 입력하세요 ###########");
