@@ -27,5 +27,7 @@ public class Ex04HashSet2 {
 		Teacher t1Same = new Teacher("이정재", 40, "국어");
 		System.out.println("t1Same의 저장여부: " + hashSet.add(t1Same));
 		System.out.println("hashSet의 크기: "+ hashSet.size());
+		
+		
 	}
 }
